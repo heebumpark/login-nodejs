@@ -3,7 +3,6 @@
 const id = document.querySelector("#id"),
   psword = document.querySelector("#psword"),
   loginBtn = document.querySelector("button");
-
 loginBtn.addEventListener("click", login);
 
 function login() {
@@ -15,10 +14,10 @@ function login() {
   fetch("/login", {
     method: "POST",
     headers: {
-      "Content-Type": "application.json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(req),
-  });
-  console.log(req);
-  console.log(JSON.stringify(req));
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 }
