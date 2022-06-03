@@ -6,6 +6,7 @@ class UserStorage {
     psword: ["1234", "123456", "12345678"],
     name: ["박희범", "박우상", "이지은"],
   };
+
   static getUsers(...fields) {
     const users = this.#users;
     const newUsers = fields.reduce((newUsers, field) => {
@@ -28,6 +29,14 @@ class UserStorage {
     }, {});
 
     return userInfo;
+  }
+
+  static save(userInfo) {
+    const users = this.#users;
+    users.id.push(userInfo.id);
+    users.name.push(userInfo.name);
+    users.psword.push(userInfo.psword);
+    console.log(users);
   }
 }
 
