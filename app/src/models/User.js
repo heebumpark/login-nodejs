@@ -18,6 +18,7 @@ class User {
     }
     return { success: false, msg: "존재하지 회원 입니다." };
   }
+
   async register() {
     const client = this.body;
     try {
