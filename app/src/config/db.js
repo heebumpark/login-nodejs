@@ -1,12 +1,11 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-  host: "login-nodejs.cmirytc5ztqm.ap-northeast-2.rds.amazonaws.com",
-  user: "admin",
-  password: "95969596",
-  database: "login_nodejs",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PSWORD,
+  database: process.env.DB_DATABASE,
 });
-
 db.connect();
 
 module.exports = db;
